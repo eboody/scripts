@@ -133,10 +133,10 @@ else
     echo "Skipping installation."
 fi
 
-sh ~/scripts/docker_setup.sh
-sh ~/scripts/merge_dotfiles.sh
-sh ~/scripts/tmux_tpm.sh
-sh ~/scripts/wofi_theme.sh
+sh ./docker_setup.sh
+sh ./merge_dotfiles.sh
+sh ./tmux_tpm.sh
+sh ./rofi_theme.sh
 
 # set up 1password ssh agent
 grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export SSH_AUTH_SOCK=~/.1password/agent.sock' >> ~/.bashrc
