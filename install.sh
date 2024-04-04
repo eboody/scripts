@@ -140,5 +140,7 @@ sh ~/scripts/wofi_theme.sh
 
 # set up 1password ssh agent
 grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export SSH_AUTH_SOCK=~/.1password/agent.sock' >> ~/.bashrc
+# add aliases to bashrc
+grep -q 'sh ~/arch_setup/aliases.sh' ~/.bashrc || echo 'sh ~/arch_setup/aliases.sh' >> ~/.bashrc
 
 cargo install typeshare-cli
