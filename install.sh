@@ -13,6 +13,7 @@ official_packages=(
     gimp
     wget
     pavucontrol
+    less
 )
 
 # List of AUR packages to be installed
