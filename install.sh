@@ -57,7 +57,6 @@ sudo pacman -S --needed --noconfirm "${official_packages[@]}"
 
 git config --global user.email "eboodnero@gmail.com"
 git config --global user.name "Eran Boodnero"
-git config --global init.defaultBranch main
 
 rustup install stable
 
