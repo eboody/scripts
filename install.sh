@@ -48,7 +48,6 @@ aur_packages=(
     p7zip
     npm
     nodejs
-    libva-nvidia-driver-git
 )
 
 # Update the system
