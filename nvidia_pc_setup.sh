@@ -16,10 +16,59 @@ libva-nvidia-driver-git
 if lspci | grep -i nvidia > /dev/null; then
     echo "Nvidia GPU detected, proceeding with ddcutil setup..."
 
+
+# 1. Add nvidia modules to /etc/mkinitcpio.conf
+if ! grep -q "^MODULES=(.*nvidia.*nvidia_modeset.*nvidia_uvm.*nvidia_drm.*)" /etc/mkinitcpio.conf; then
+    echo "Adding nvidia modules to /etc/mkinitcpio.conf..."
+    sed -i 's/^MODULES=(/&nvidia nvidia_modeset nvidia_uvm nvidia_drm /' /etc/mkinitcpio.conf
+else
+    echo "Nvidia modules already added."
+fi
+
+# Ensure linux-headers is installed
+if ! pacman -Qi linux-headers > /dev/null 2>&1; then
+    echo "linux-headers package is required. Installing..."
+    pacman -Sy linux-headers
+fi
+
+# 2. Generate initramfs
+mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
+
+# 3. Add options nvidia-drm modeset=1 to /etc/modprobe.d/nvidia.conf
+if [ ! -f /etc/modprobe.d/nvidia.conf ]; then
+    echo "Creating /etc/modprobe.d/nvidia.conf and adding modeset option..."
+    echo "options nvidia-drm modeset=1" > /etc/modprobe.d/nvidia.conf
+else
+    if ! grep -q "^options nvidia-drm modeset=1$" /etc/modprobe.d/nvidia.conf; then
+        echo "Adding modeset option to /etc/modprobe.d/nvidia.conf..."
+        echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia.conf
+    else
+        echo "Modeset option already set in /etc/modprobe.d/nvidia.conf."
+    fi
+fi
+
+# 4. Add env variables to hyprland.conf
+HYPR_CONF="/etc/hypr/hyprland.conf"
+if [ -f "$HYPR_CONF" ]; then
+    echo "Adding env variables to $HYPR_CONF..."
+    for env_var in "LIBVA_DRIVER_NAME=nvidia" "XDG_SESSION_TYPE=wayland" "GBM_BACKEND=nvidia-drm" "__GLX_VENDOR_LIBRARY_NAME=nvidia" "WLR_NO_HARDWARE_CURSORS=1"; do
+        if ! grep -q "^env = $env_var$" "$HYPR_CONF"; then
+            echo "env = $env_var" >> "$HYPR_CONF"
+        fi
+    done
+else
+    echo "Warning: $HYPR_CONF not found. Ensure Hyprland is installed and configured."
+fi
+
+# 5. Print bootloader configuration instructions
+echo "For people using systemd-boot you can do this adding nvidia_drm.modeset=1 to the end of /boot/loader/entries/arch.conf."
+echo "For people using grub you can do this by adding nvidia_drm.modeset=1 to the end of GRUB_CMDLINE_LINUX_DEFAULT= in /etc/default/grub, then run # grub-mkconfig -o /boot/grub/grub.cfg"
+echo "For others check out kernel parameters and how to add nvidia_drm.modeset=1 to your specific bootloader."
+    sudo paru -Sy --needed --noconfirm "${aur_stuff[@]}"
+
     # Install ddcutil from AUR (assuming you have yay or another AUR helper installed)
     paru -Sy ddcutil || { echo "Failed to install ddcutil"; exit 1; }
 
-    sudo paru -Sy --needed --noconfirm "${aur_stuff[@]}"
 
     # Load i2c-dev kernel module
     modprobe i2c-dev
