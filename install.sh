@@ -12,7 +12,6 @@ official_packages=(
     kitty
     gcc
     rustup
-    nodejs
     gimp
     bat
     fzf
@@ -46,6 +45,8 @@ aur_packages=(
     speech-dispatcher
     spotify-snapstore
     rofi
+    npm
+    nodejs
 )
 
 # Update the system
@@ -144,3 +145,4 @@ grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export
 grep -q 'sh ~/arch_setup/aliases.sh' ~/.bashrc || echo 'sh ~/arch_setup/aliases.sh' >> ~/.bashrc
 
 cargo install typeshare-cli
+cargo install cargo-watch
