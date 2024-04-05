@@ -32,6 +32,7 @@ if [ "$LATEST_HASH" != "$KNOWN_HASH" ]; then
     cp -r "$CLONE_DIR/nvim" ~/.config/
     cp -r "$CLONE_DIR/rofi" ~/.config/
     cp "$CLONE_DIR/starship.toml" ~/.config/starship.toml
+    cp "$CLONE_DIR/rsync_exclude" ~/.config/rsync_exclude.txt
 
     rm -rf "$CLONE_DIR"
 

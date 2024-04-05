@@ -4,6 +4,17 @@ CONFIG_PATH=/home/eran/.config
 
 cd $CONFIG_PATH
 
+if [ -d ".git" ]; then
+    echo "Directory is already initialized with git."
+else
+    echo "Directory is not initialized with git."
+    git init
+    git branch -M main
+    git config pull.rebase false
+  git branch --set-upstream-to=origin/main main
+    git remote add origin git@github.com:eboody/dotfiles
+fi
+
 # Define an array of file names
 file_names=(
   "$CONFIG_PATH/hypr" 
@@ -26,4 +37,4 @@ commit_message="Update: $(date +'%Y-%m-%d %H:%M:%S')"
 git commit -m "$commit_message"
 
 # Push to your GitHub repository
-git push git@github.com:eboody/dotfiles
+git push -f origin main
