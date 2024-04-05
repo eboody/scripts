@@ -30,6 +30,7 @@ if [ "$LATEST_HASH" != "$KNOWN_HASH" ]; then
     cp -r "$CLONE_DIR/waybar" ~/.config/
     cp -r "$CLONE_DIR/tmux" ~/.config/
     cp -r "$CLONE_DIR/nvim" ~/.config/
+    cp -r "$CLONE_DIR/rofi" ~/.config/
     cp "$CLONE_DIR/starship.toml" ~/.config/starship.toml
 
     rm -rf "$CLONE_DIR"
