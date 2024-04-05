@@ -48,7 +48,10 @@ aur_packages=(
     p7zip
     npm
     nodejs
+    wev
 )
+
+cd $HOME
 
 # Update the system
 sudo pacman -Syu
