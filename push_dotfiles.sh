@@ -11,7 +11,7 @@ else
     git init
     git branch -M main
     git config pull.rebase false
-  git branch --set-upstream-to=origin/main main
+    git branch --set-upstream-to=origin/main main
     git remote add origin git@github.com:eboody/dotfiles
 fi
 
@@ -31,6 +31,9 @@ file_names=(
 for file_name in "${file_names[@]}"; do
   git add -f "$file_name"
 done
+
+# Remove tmux/plugins directory from Git index
+git rm --cached -r -f "$CONFIG_PATH/tmux/plugins"
 
 # Commit with current date and time as message
 commit_message="Update: $(date +'%Y-%m-%d %H:%M:%S')"
