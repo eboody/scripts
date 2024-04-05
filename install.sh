@@ -13,7 +13,6 @@ official_packages=(
     gimp
     wget
     pavucontrol
-
 )
 
 # List of AUR packages to be installed
@@ -49,6 +48,8 @@ aur_packages=(
     npm
     nodejs
     wev
+    grim
+    slurp
 )
 
 cd $HOME
