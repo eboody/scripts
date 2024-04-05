@@ -51,10 +51,13 @@ aur_packages=(
 # Update the system
 sudo pacman -Syu
 
-
-
 # Install official packages
-sudo pacman -S --needed "${official_packages[@]}"
+sudo pacman -S --needed --noconfirm "${official_packages[@]}"
+
+git config --global user.email "eboodnero@gmail.com"
+git config --global user.name "Eran Boodnero"
+
+rustup install stable
 
 # Function to check if paru is already installed
 check_if_installed() {
@@ -90,11 +93,14 @@ else
     echo "Skipping installation."
 fi
 
-
-
 # Install AUR packages
-paru -Sy --needed "${aur_packages[@]}"
-#!/bin/bash
+paru -Sy --needed --noconfirm "${aur_packages[@]}"
+
+sh $HOME/scripts/docker_setup.sh
+sh $HOME/scripts/merge_dotfiles.sh
+sh $HOME/scripts/tmux_tpm.sh
+sh $HOME/scripts/rofi_theme.sh
+sh $HOME/scripts/aliases.sh
 
 # Function to check if 1Password is already installed
 check_if_installed() {
@@ -133,14 +139,7 @@ else
     echo "Skipping installation."
 fi
 
-sh ./docker_setup.sh
-sh ./merge_dotfiles.sh
-sh ./tmux_tpm.sh
-sh ./rofi_theme.sh
-
 # set up 1password ssh agent
 grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export SSH_AUTH_SOCK=~/.1password/agent.sock' >> ~/.bashrc
-# add aliases to bashrc
-grep -q 'sh ~/arch_setup/aliases.sh' ~/.bashrc || echo 'sh ~/arch_setup/aliases.sh' >> ~/.bashrc
 
 cargo install typeshare-cli

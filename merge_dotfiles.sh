@@ -26,6 +26,8 @@ if [ "$LATEST_HASH" != "$KNOWN_HASH" ]; then
     CLONE_DIR="/tmp/dotfiles"
     git clone "$REPO_URL" "$CLONE_DIR"
     cp -r "$CLONE_DIR/kitty" ~/.config/
+    cp -r "$CLONE_DIR/hypr" ~/.config/
+    cp -r "$CLONE_DIR/waybar" ~/.config/
     cp -r "$CLONE_DIR/tmux" ~/.config/
     cp -r "$CLONE_DIR/nvim" ~/.config/
     cp "$CLONE_DIR/starship.toml" ~/.config/starship.toml
