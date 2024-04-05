@@ -10,7 +10,6 @@ official_packages=(
     kitty
     gcc
     rustup
-    nodejs
     gimp
     wget
     pavucontrol
@@ -46,6 +45,8 @@ aur_packages=(
     bat
     fzf
     p7zip
+    npm
+    nodejs
 )
 
 # Update the system
@@ -144,6 +145,7 @@ fi
 grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export SSH_AUTH_SOCK=~/.1password/agent.sock' >> ~/.bashrc
 
 cargo install typeshare-cli
+cargo install cargo-watch
 
 # create a gitignore that ignores everything in .config
 [ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore
