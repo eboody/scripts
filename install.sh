@@ -1,12 +1,10 @@
 # List of official packages to be installed
 official_packages=(
     vim
-    deluge
     libinput
     interception-tools
     libevdev
     glibc
-    ripgrep
     firefox
     git
     kitty
@@ -14,19 +12,17 @@ official_packages=(
     rustup
     nodejs
     gimp
-    bat
-    fzf
-    zoxide
-    p7zip
-    pavucontrol
-    wl-clipboard
-    brightnessctl
     wget
-    starship
+    pavucontrol
 )
 
 # List of AUR packages to be installed
 aur_packages=(
+    ripgrep
+    deluge
+    starship
+    wl-clipboard
+    brightnessctl
     yaml-cpp
     waybar
     hyprpaper
@@ -45,7 +41,11 @@ aur_packages=(
     authy
     speech-dispatcher
     spotify-snapstore
-    rofi
+    rofi-lbonn-wayland
+    zoxide
+    bat
+    fzf
+    p7zip
 )
 
 # Update the system
@@ -56,6 +56,7 @@ sudo pacman -S --needed --noconfirm "${official_packages[@]}"
 
 git config --global user.email "eboodnero@gmail.com"
 git config --global user.name "Eran Boodnero"
+git config --global init.defaultBranch main
 
 rustup install stable
 
@@ -143,3 +144,6 @@ fi
 grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export SSH_AUTH_SOCK=~/.1password/agent.sock' >> ~/.bashrc
 
 cargo install typeshare-cli
+
+# create a gitignore that ignores everything in .config
+[ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore

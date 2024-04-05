@@ -11,12 +11,14 @@ file_names=(
   "$CONFIG_PATH/kitty"
   "$CONFIG_PATH/nvim"
   "$CONFIG_PATH/rsync_exclude.txt"
+  "$CONFIG_PATH/starship.toml"
   "$CONFIG_PATH/waybar"
+  "$CONFIG_PATH/rofi"
 )
 
 # Add each file to git
 for file_name in "${file_names[@]}"; do
-  git add "$file_name"
+  git add -f "$file_name"
 done
 
 # Commit with current date and time as message
