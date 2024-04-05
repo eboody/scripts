@@ -48,7 +48,7 @@ else
 fi
 
 # 4. Add env variables to hyprland.conf
-HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
+HYPR_CONF="/home/eran/.config/hypr/hyprland.conf"
 
 if [ -f "$HYPR_CONF" ]; then
     echo "Adding env variables to $HYPR_CONF..."
@@ -65,7 +65,7 @@ fi
 echo "For people using systemd-boot you can do this adding nvidia_drm.modeset=1 to the end of /boot/loader/entries/arch.conf."
 echo "For people using grub you can do this by adding nvidia_drm.modeset=1 to the end of GRUB_CMDLINE_LINUX_DEFAULT= in /etc/default/grub, then run # grub-mkconfig -o /boot/grub/grub.cfg"
 echo "For others check out kernel parameters and how to add nvidia_drm.modeset=1 to your specific bootloader."
-    sudo paru -Sy --needed --noconfirm "${aur_stuff[@]}"
+    paru -Sy --needed --noconfirm "${aur_stuff[@]}"
 
     # Install ddcutil from AUR (assuming you have yay or another AUR helper installed)
     paru -Sy ddcutil || { echo "Failed to install ddcutil"; exit 1; }
