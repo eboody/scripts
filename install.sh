@@ -13,7 +13,6 @@ official_packages=(
     gcc
     rustup
     nodejs
-    wofi
     gimp
     bat
     fzf
@@ -46,6 +45,7 @@ aur_packages=(
     authy
     speech-dispatcher
     spotify-snapstore
+    rofi
 )
 
 # Update the system
