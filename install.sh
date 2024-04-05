@@ -13,6 +13,7 @@ official_packages=(
     gimp
     wget
     pavucontrol
+
 )
 
 # List of AUR packages to be installed
@@ -47,6 +48,7 @@ aur_packages=(
     p7zip
     npm
     nodejs
+    libva-nvidia-driver-git
 )
 
 # Update the system

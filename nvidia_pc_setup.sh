@@ -6,12 +6,20 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+aur_stuff=(
+qt5-wayland
+qt5ct
+libva
+libva-nvidia-driver-git
+)
 # Check for Nvidia GPU
 if lspci | grep -i nvidia > /dev/null; then
     echo "Nvidia GPU detected, proceeding with ddcutil setup..."
 
     # Install ddcutil from AUR (assuming you have yay or another AUR helper installed)
     paru -Sy ddcutil || { echo "Failed to install ddcutil"; exit 1; }
+
+    sudo paru -Sy --needed --noconfirm "${aur_stuff[@]}"
 
     # Load i2c-dev kernel module
     modprobe i2c-dev
