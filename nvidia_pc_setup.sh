@@ -52,7 +52,7 @@ HYPR_CONF="/home/eran/.config/hypr/hyprland.conf"
 
 if [ -f "$HYPR_CONF" ]; then
     echo "Adding env variables to $HYPR_CONF..."
-    for env_var in "LIBVA_DRIVER_NAME=nvidia" "XDG_SESSION_TYPE=wayland" "GBM_BACKEND=nvidia-drm" "__GLX_VENDOR_LIBRARY_NAME=nvidia" "WLR_NO_HARDWARE_CURSORS=1"; do
+    for env_var in "LIBVA_DRIVER_NAME,nvidia" "XDG_SESSION_TYPE,wayland" "GBM_BACKEND,nvidia-drm" "__GLX_VENDOR_LIBRARY_NAME,nvidia" "WLR_NO_HARDWARE_CURSORS,1"; do
         if ! grep -q "^env = $env_var$" "$HYPR_CONF"; then
             echo "env = $env_var" >> "$HYPR_CONF"
         fi

@@ -22,7 +22,8 @@ lines_to_add=(
     'alias obs="nvim ~/documents/notes/$(date +\"%m-%d-%Y\").md"'
     'alias ein="nvim ~/scripts/install.sh"'
     'alias in="sh ~/scripts/install.sh"'
-    'alias pushconf="sh ~/scripts/push_dotfiles.sh"'
+    'alias pushconf="sh ~/scripts/push_config.sh"'
+    'alias roci="ssh eran@therocinante.hopto.org"'
     'export SSH_AUTH_SOCK=~/.1password/agent.sock'
     'eval "$(starship init bash)"'
 )

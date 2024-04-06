@@ -14,6 +14,7 @@ official_packages=(
     wget
     pavucontrol
     less
+    openssl
 )
 
 # List of AUR packages to be installed
@@ -61,6 +62,21 @@ sudo pacman -Syu
 # Install official packages
 sudo pacman -S --needed --noconfirm "${official_packages[@]}"
 
+# Check if SSHD service is running
+if systemctl is-active --quiet sshd; then
+    echo "SSHD is already running."
+else
+    # Starting the SSHD service
+    echo "Starting the SSHD (OpenSSH Daemon) service..."
+    sudo systemctl start sshd
+    echo "SSHD service started."
+
+    # Enabling the SSHD service to start on boot
+    echo "Enabling the SSHD service to start on boot..."
+    sudo systemctl enable sshd
+    echo "SSHD service enabled on boot."
+fi
+
 git config --global user.email "eboodnero@gmail.com"
 git config --global user.name "Eran Boodnero"
 
@@ -104,7 +120,7 @@ fi
 paru -Sy --needed --noconfirm "${aur_packages[@]}"
 
 sh $HOME/scripts/docker_setup.sh
-sh $HOME/scripts/merge_dotfiles.sh
+sh $HOME/scripts/pull_config.sh
 sh $HOME/scripts/tmux_tpm.sh
 sh $HOME/scripts/rofi_theme.sh
 sh $HOME/scripts/aliases.sh
