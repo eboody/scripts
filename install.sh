@@ -15,6 +15,7 @@ official_packages=(
     pavucontrol
     less
     openssl
+    inkscape
 )
 
 # List of AUR packages to be installed
@@ -52,6 +53,7 @@ aur_packages=(
     wev
     grim
     slurp
+    figma-linux
 )
 
 cd $HOME
