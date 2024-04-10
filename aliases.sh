@@ -37,3 +37,5 @@ for line in "${lines_to_add[@]}"; do
         echo "Skipped (already exists): $line"
     fi
 done
+
+. $HOME/.bashrc
