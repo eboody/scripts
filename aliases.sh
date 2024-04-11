@@ -25,6 +25,8 @@ lines_to_add=(
     'alias pushconf="sh ~/scripts/push_config.sh"'
     'alias roci="ssh eran@therocinante.hopto.org"'
     'export SSH_AUTH_SOCK=~/.1password/agent.sock'
+    'alias logout="pkill -KILL -u $USER"'
+    'alias rsync="rsync --exclude-from=/home/eran/.config/rsync_exclude.txt"'
     'eval "$(starship init bash)"'
 )
 

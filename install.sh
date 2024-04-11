@@ -53,7 +53,9 @@ aur_packages=(
     wev
     grim
     slurp
-    figma-linux
+    interception-dual-function-keys
+    tree
+    rsync
 )
 
 cd $HOME
@@ -172,3 +174,6 @@ cargo install cargo-watch
 
 # create a gitignore that ignores everything in .config
 [ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore
+
+sudo timedatectl set-timezone America/Los_Angeles
+sudo hwclock --systohc --utc
