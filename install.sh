@@ -44,6 +44,8 @@ aur_packages=(
     speech-dispatcher
     spotify-snapstore
     rofi-lbonn-wayland
+    rofi-emoji-git
+    wtype
     zoxide
     bat
     fzf
@@ -53,9 +55,10 @@ aur_packages=(
     wev
     grim
     slurp
-    interception-dual-function-keys
     tree
     rsync
+    figma-linux
+    fprint
 )
 
 cd $HOME
@@ -128,6 +131,7 @@ sh $HOME/scripts/pull_config.sh
 sh $HOME/scripts/tmux_tpm.sh
 sh $HOME/scripts/rofi_theme.sh
 sh $HOME/scripts/aliases.sh
+sh $HOME/scripts/emojis.sh
 
 # Function to check if 1Password is already installed
 check_if_installed() {
