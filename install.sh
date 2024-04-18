@@ -45,6 +45,7 @@ aur_packages=(
     spotify-snapstore
     rofi-lbonn-wayland
     rofi-emoji-git
+    ttf-twemoji
     wtype
     zoxide
     bat
