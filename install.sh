@@ -55,10 +55,12 @@ aur_packages=(
     wev
     grim
     slurp
-    tree
     rsync
     figma-linux
     fprint
+    ttf-twemoji
+    entr
+    mpv
 )
 
 cd $HOME
@@ -131,7 +133,7 @@ sh $HOME/scripts/pull_config.sh
 sh $HOME/scripts/tmux_tpm.sh
 sh $HOME/scripts/rofi_theme.sh
 sh $HOME/scripts/aliases.sh
-sh $HOME/scripts/emojis.sh
+# sh $HOME/scripts/emojis.sh
 
 # Function to check if 1Password is already installed
 check_if_installed() {
@@ -175,6 +177,7 @@ grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export
 
 cargo install typeshare-cli
 cargo install cargo-watch
+cargo install cargo-script
 
 # create a gitignore that ignores everything in .config
 [ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore
