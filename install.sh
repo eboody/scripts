@@ -61,6 +61,8 @@ aur_packages=(
     ttf-twemoji
     entr
     mpv
+    nwg-look
+    ant-dracula-theme-git
 )
 
 cd $HOME
