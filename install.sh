@@ -65,6 +65,7 @@ aur_packages=(
     nwg-look
     ant-dracula-theme-git
     act
+    dracula-icons-git
 )
 
 cd $HOME
