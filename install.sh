@@ -63,6 +63,7 @@ aur_packages=(
     mpv
     nwg-look
     ant-dracula-theme-git
+    act
 )
 
 cd $HOME
