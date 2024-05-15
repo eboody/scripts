@@ -31,6 +31,7 @@ lines_to_add=(
     'alias cd="z"'
     'eval "$(starship init bash)"'
     'source ~/scripts/zoxide.sh'
+    'alias mirrors="sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"'
     'export EDITOR="nvim"'
 )
 

@@ -16,6 +16,7 @@ official_packages=(
     less
     openssl
     inkscape
+    reflector
 )
 
 # List of AUR packages to be installed
@@ -69,6 +70,7 @@ aur_packages=(
 )
 
 cd $HOME
+
 
 # Update the system
 sudo pacman -Syu
