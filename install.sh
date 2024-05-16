@@ -44,7 +44,7 @@ aur_packages=(
     authy
     speech-dispatcher
     spotify-snapstore
-    rofi-lbonn-wayland
+    rofi-lbonn-wayland-git
     rofi-emoji-git
     ttf-twemoji
     wtype
