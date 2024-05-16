@@ -59,7 +59,6 @@ aur_packages=(
     slurp
     rsync
     figma-linux
-    fprint
     ttf-twemoji
     entr
     mpv
@@ -67,7 +66,6 @@ aur_packages=(
     ant-dracula-theme-git
     act
     dracula-icons-git
-    laptop-mode-tools
 )
 
 cd $HOME
@@ -142,6 +140,7 @@ sh $HOME/scripts/tmux_tpm.sh
 sh $HOME/scripts/rofi_theme.sh
 sh $HOME/scripts/aliases.sh
 sh $HOME/scripts/update_dns.sh
+sh $HOME/scripts/laptop_setup.sh
 # sh $HOME/scripts/emojis.sh
 
 # Function to check if 1Password is already installed
