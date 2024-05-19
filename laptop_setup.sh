@@ -20,7 +20,7 @@ fprint
 # Check if the current MAC address matches the laptop's MAC address
 if [ "$mac_address" == "$laptop_mac_address" ]; then
     sudo pacman -S --needed --noconfirm "${aur_stuff[@]}"
-    sh $HOME/scripts/setup_mic_mute.sh
+    sudo sh /home/eran/scripts/setup_mic_mute.sh
 else
     echo "not on laptop"
 fi
