@@ -17,6 +17,8 @@ official_packages=(
     openssl
     inkscape
     reflector
+    sox
+    deno
 )
 
 # List of AUR packages to be installed
@@ -44,7 +46,7 @@ aur_packages=(
     authy
     speech-dispatcher
     spotify-snapstore
-    rofi-lbonn-wayland-git
+    # rofi-lbonn-wayland-git
     rofi-emoji-git
     ttf-twemoji
     wtype

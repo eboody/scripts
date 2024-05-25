@@ -7,15 +7,15 @@ line_exists() {
 
 # Define lines to be added
 lines_to_add=(
-    'alias ls="eza"'
+    'alias ls="eza --icons --git"'
     'alias cat="bat"'
     'alias cw="cargo watch -c -q -w src/ -x \"run\""'
     'alias ct="cargo watch -c -q -w tests/ -x \"test -q quick_dev -- --nocapture\""'
     'alias clippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used"'
     'alias brc="nvim ~/.bashrc"'
     'alias sb="source ~/.bashrc"'
-    'alias la="eza -la"'
-    'alias tree="eza --tree"'
+    'alias la="eza -l --icons --git -a"'
+    'alias tree="eza --tree --icons"'
     'alias thunderstorm="mpv --loop ~/Music/thunderstorm.flac"'
     'alias ehyp="nvim ~/.config/hypr/hyprland.conf"'
     'alias envim="nvim ~/.config/nvim"'
