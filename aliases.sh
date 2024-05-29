@@ -9,7 +9,7 @@ line_exists() {
 lines_to_add=(
     'alias ls="eza --icons --git"'
     'alias cat="bat"'
-    'alias cw="cargo watch -c -q -w src/ -x \"run\""'
+    'alias cw="cargo watch -c -q -w src/ -x \"run\" -i \"src/templates\" -i \"src/public\" "'
     'alias ct="cargo watch -c -q -w tests/ -x \"test -q quick_dev -- --nocapture\""'
     'alias clippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used"'
     'alias brc="nvim ~/.bashrc"'
