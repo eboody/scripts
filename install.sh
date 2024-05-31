@@ -188,6 +188,7 @@ grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export
 cargo install typeshare-cli
 cargo install cargo-watch
 cargo install cargo-script
+cargo install cargo-run-script
 
 # create a gitignore that ignores everything in .config
 [ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore
