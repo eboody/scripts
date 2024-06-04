@@ -19,6 +19,7 @@ official_packages=(
     reflector
     sox
     deno
+    qutebrowser
 )
 
 # List of AUR packages to be installed

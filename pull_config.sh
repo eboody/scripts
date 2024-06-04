@@ -31,6 +31,7 @@ if [ "$LATEST_HASH" != "$KNOWN_HASH" ]; then
     cp -r "$CLONE_DIR/tmux" ~/.config/
     cp -r "$CLONE_DIR/nvim" ~/.config/
     cp -r "$CLONE_DIR/rofi" ~/.config/
+    cp -r "$CLONE_DIR/qutebrowser" ~/.config/
     cp "$CLONE_DIR/starship.toml" ~/.config/starship.toml
     cp "$CLONE_DIR/rsync_exclude" ~/.config/rsync_exclude.txt
 

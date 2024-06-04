@@ -26,6 +26,7 @@ file_names=(
   "$CONFIG_PATH/starship.toml"
   "$CONFIG_PATH/waybar"
   "$CONFIG_PATH/rofi"
+  "$CONFIG_PATH/qutebrowser"
 )
 
 # Add each file to git

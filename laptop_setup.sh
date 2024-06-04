@@ -13,8 +13,8 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 aur_stuff=(
-laptop-mode-tools
 fprint
+tlp
 )
 
 # Check if the current MAC address matches the laptop's MAC address
