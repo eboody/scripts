@@ -190,6 +190,7 @@ cargo install typeshare-cli
 cargo install cargo-watch
 cargo install cargo-script
 cargo install cargo-run-script
+cargo install sccache
 
 # create a gitignore that ignores everything in .config
 [ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore
