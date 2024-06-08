@@ -69,6 +69,7 @@ aur_packages=(
     ant-dracula-theme-git
     act
     dracula-icons-git
+    1password-cli
 )
 
 cd $HOME
