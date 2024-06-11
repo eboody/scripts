@@ -20,6 +20,7 @@ official_packages=(
     sox
     deno
     qutebrowser
+    thunderbird
 )
 
 # List of AUR packages to be installed
