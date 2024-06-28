@@ -5,7 +5,6 @@ official_packages=(
     interception-tools
     libevdev
     glibc
-    firefox
     git
     kitty
     gcc
@@ -71,6 +70,7 @@ aur_packages=(
     act
     dracula-icons-git
     1password-cli
+    ungoogled-chromium-bin
 )
 
 cd $HOME
