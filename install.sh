@@ -188,11 +188,29 @@ fi
 # set up 1password ssh agent
 grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export SSH_AUTH_SOCK=~/.1password/agent.sock' >> ~/.bashrc
 
-cargo install typeshare-cli
-cargo install cargo-watch
-cargo install cargo-script
-cargo install cargo-run-script
-cargo install sccache
+# Function to check if a Cargo package is installed
+is_installed() {
+  cargo install --list | grep -q "^$1 v"
+}
+
+# Array of packages to be installed
+packages=(
+  "typeshare-cli"
+  "cargo-watch"
+  "cargo-script"
+  "cargo-run-script"
+  "sccache"
+)
+
+# Install packages if they are not already installed
+for package in "${packages[@]}"; do
+  if ! is_installed "$package"; then
+    echo "Installing $package..."
+    cargo install "$package"
+  else
+    echo "$package is already installed."
+  end
+done
 
 # create a gitignore that ignores everything in .config
 [ -f ~/.config/.gitignore ] || echo "*" > $HOME/.config/.gitignore
