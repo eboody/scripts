@@ -36,13 +36,23 @@ lines_to_add=(
     'alias chromium="chromium --ozone-platform=wayland"'
     'export RUSTC_WRAPPER=sccache'
     'export EDITOR="nvim"'
+    '# If not running interactively, don'"'"'t do anything'
+    '[[ $- != *i* ]] && return'
+    'eval "$(fzf --bash)"'
+    'alias grep="grep --color=auto"'
+    'PS1="[\u@\h \W]\$ "'
+    'alias nicevim="sudo renice -n -20 -p $(pgrep nvim)"'
+    '# pnpm'
+    'export PNPM_HOME="/home/eran/.local/share/pnpm"'
+    'case ":$PATH:" in'
+    '  *":$PNPM_HOME:"*) ;;'
+    '  *) export PATH="$PNPM_HOME:$PATH" ;;'
+    'esac'
+    '# pnpm end'
+    '# Created by `pipx` on 2024-04-20 13:14:11'
+    'export PATH="$PATH:/home/eran/.local/bin"'
+    'alias nano="nvim"'
 )
-
-
-# Function to check if a line already exists in .bashrc
-line_exists() {
-    grep -Fxq "$1" ~/.bashrc
-}
 
 # Loop through lines and add to .bashrc if they don't exist
 for line in "${lines_to_add[@]}"; do
@@ -57,4 +67,3 @@ done
 # Source .bashrc to reflect changes
 source ~/.bashrc
 echo ".bashrc updated and sourced."
-
