@@ -72,6 +72,7 @@ aur_packages=(
     dracula-icons-git
     1password-cli
     ungoogled-chromium-bin
+    plocate
 )
 
 cd $HOME

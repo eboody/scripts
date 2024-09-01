@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Default values
+MODEL="llava"
+IMAGE_PATH="./image.jpg"
+PROMPT="Describe this image in detail:"
+
+# Function to display usage
+usage() {
+    echo "Usage: $0 [-m MODEL] [-i IMAGE_PATH] [-p PROMPT]"
+    echo "  -m MODEL       Specify the model (default: llava)"
+    echo "  -i IMAGE_PATH  Specify the path to the image (default: ./image.jpg)"
+    echo "  -p PROMPT      Specify the prompt (default: 'Describe this image in detail:')"
+    echo "  -h             Display this help message"
+    exit 1
+}
+
+# Parse command line options
+while getopts "m:i:p:h" opt; do
+    case ${opt} in
+        m )
+            MODEL=$OPTARG
+            ;;
+        i )
+            IMAGE_PATH=$OPTARG
+            ;;
+        p )
+            PROMPT=$OPTARG
+            ;;
+        h )
+            usage
+            ;;
+        \? )
+            usage
+            ;;
+    esac
+done
+
+# Check if image file exists
+if [ ! -f "$IMAGE_PATH" ]; then
+    echo "Error: Image file not found: $IMAGE_PATH"
+    exit 1
+fi
+
+# Encode image to base64
+BASE64_IMAGE=$(base64 -w 0 "$IMAGE_PATH")
+
+# Construct and execute the curl command
+RESPONSE=$(curl -s http://localhost:11434/api/chat -d '{
+  "model": "'"$MODEL"'",
+  "messages": [
+    {
+      "role": "user",
+      "content": "'"$PROMPT"'",
+      "images": ["'"$BASE64_IMAGE"'"]
+    }
+  ]
+}')
+
+# Extract and print the content using jq
+echo "$RESPONSE" | jq -r '.message.content // empty'
+
+# Check if the response was empty
+if [ -z "$(echo "$RESPONSE" | jq -r '.message.content // empty')" ]; then
+    echo "Error: No response received or unable to parse response."
+    echo "Full response:"
+    echo "$RESPONSE"
+fi
