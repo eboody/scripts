@@ -60,7 +60,6 @@ official_packages=(
     lsof
     tldr
     postgresql
-    psql
     redis
     tmux
     tree
