@@ -75,6 +75,7 @@ official_packages=(
     exfat-utils
     dosfstools
     luarocks
+    gvfs
 )
 
 # List of AUR packages to be installed
