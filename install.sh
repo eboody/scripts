@@ -76,6 +76,7 @@ official_packages=(
     dosfstools
     luarocks
     gvfs
+    polkit-gnome
 )
 
 # List of AUR packages to be installed
@@ -97,9 +98,7 @@ aur_packages=(
     slack
     obs-studio
     blueberry
-    deluge
-    authy
-    speech-dispatcher
+    deluge-gtk
     spotify-snapstore
     extra/rofi-wayland
     # rofi-lbonn-wayland-git
