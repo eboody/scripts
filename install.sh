@@ -67,11 +67,18 @@ official_packages=(
     git
     make
     unzip
+    ripgrep
+    fd
+    unzip
+    neovim
+    thunar
+    exfat-utils
+    dosfstools
+    luarocks
 )
 
 # List of AUR packages to be installed
 aur_packages=(
-    ripgrep
     deluge
     starship
     wl-clipboard
@@ -82,7 +89,6 @@ aur_packages=(
     eza
     obsidian
     nerd-fonts
-    unzip
     adwaita-dark
     docker-compose
     zoom
@@ -122,6 +128,7 @@ aur_packages=(
     plocate
     fx
     google-earth-pro
+    luajit-tiktoken-bin 
 )
 
 # Update the system
