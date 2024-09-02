@@ -27,7 +27,7 @@ lines_to_add=(
     'export SSH_AUTH_SOCK=~/.1password/agent.sock'
     'alias logout="pkill -KILL -u $USER"'
     'alias rsync="rsync --exclude-from=/home/eran/.config/rsync_exclude.txt"'
-    'alias ptree="tree -I "target|node_modules|dist" | wl-copy"'
+    'alias ptree="tree -I \"target|node_modules|dist\" | wl-copy"'
     'alias cd="z"'
     'eval "$(starship init bash)"'
     'source ~/scripts/zoxide.sh'

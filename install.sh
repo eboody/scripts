@@ -54,7 +54,6 @@ official_packages=(
     deno
     qutebrowser
     thunderbird
-    etcher-bin
     feh
     jq
     lsof
@@ -64,9 +63,10 @@ official_packages=(
     tmux
     tree
     ufw
-    virtualbox
-    virtualbox-host-modules-arch
     wofi
+    git
+    make
+    unzip
 )
 
 # List of AUR packages to be installed
@@ -174,7 +174,7 @@ scripts=(
     "rofi_theme.sh"
     "aliases.sh"
     "update_dns.sh"
-    "laptop_setup.sh"
+    # "laptop_setup.sh"
 )
 
 for script in "${scripts[@]}"; do
@@ -196,6 +196,7 @@ cargo_packages=(
     "cargo-script"
     "cargo-run-script"
     "sccache"
+    "jinja-lsp"
 )
 
 for package in "${cargo_packages[@]}"; do
