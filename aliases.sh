@@ -52,6 +52,7 @@ lines_to_add=(
     '# Created by `pipx` on 2024-04-20 13:14:11'
     'export PATH="$PATH:/home/eran/.local/bin"'
     'alias nano="nvim"'
+    'alias myevin="cd ~/code/myev && sudo ./target/release/myev-installer"'
 )
 
 # Loop through lines and add to .bashrc if they don't exist
