@@ -123,7 +123,7 @@ aur_packages=(
     ant-dracula-theme-git
     act
     dracula-icons-git
-   # 1password-cli 
+    1password 
     ungoogled-chromium-bin
     plocate
     fx

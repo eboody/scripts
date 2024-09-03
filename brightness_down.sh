@@ -7,5 +7,5 @@ if [[ "$chassis_type" == 9 || "$chassis_type" == 10 || "$chassis_type" == 14 ]];
     brightnessctl set 10%-
 else
     # Commands for desktop
-    ddcutil setvcp 10 - 33 --display 1
+    ddcutil setvcp 10 - 50 --display 1
 fi
