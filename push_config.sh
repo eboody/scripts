@@ -42,7 +42,7 @@ commit_message="Update: $(date +'%Y-%m-%d %H:%M:%S')"
 git commit -m "$commit_message"
 
 # Push to your GitHub repository
-git push origin main
+git push -f origin main
 
 cd $SCRIPT_PATH
 
