@@ -42,7 +42,6 @@ official_packages=(
     git
     kitty
     gcc
-    rustup
     gimp
     wget
     pavucontrol
@@ -95,7 +94,6 @@ aur_packages=(
     docker-compose
     zoom
     discord
-    slack
     obs-studio
     blueberry
     deluge-gtk
@@ -129,6 +127,7 @@ aur_packages=(
     fx
     google-earth-pro
     luajit-tiktoken-bin 
+    btop
 )
 
 # Update the system
