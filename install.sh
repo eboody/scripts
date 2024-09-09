@@ -222,6 +222,4 @@ log "Setting timezone and hardware clock..."
 sudo timedatectl set-timezone America/Los_Angeles || { log "Failed to set timezone"; exit 1; }
 sudo hwclock --systohc --utc || { log "Failed to set hardware clock"; exit 1; }
 
-flatpak install flathub md.obsidian.Obsidian
-
 log "Installation and setup completed successfully."
