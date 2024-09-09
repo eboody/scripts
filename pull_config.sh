@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the repository and its API URL for latest commit
-REPO_URL="https://github.com/eboody/dotfiles"
+REPO_URL="git@github.com:eboody/dotfiles"
 API_URL="https://api.github.com/repos/eboody/dotfiles/commits/main"
 
 # Path to the file storing the last update's commit hash

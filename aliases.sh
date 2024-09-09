@@ -53,6 +53,7 @@ lines_to_add=(
     'export PATH="$PATH:/home/eran/.local/bin"'
     'alias nano="nvim"'
     'alias myevin="cd ~/code/myev && sudo ./target/release/myev-installer"'
+    'alias wayb="waybar & disown"'
 )
 
 # Loop through lines and add to .bashrc if they don't exist
