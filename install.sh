@@ -128,6 +128,7 @@ aur_packages=(
     google-earth-pro
     luajit-tiktoken-bin 
     btop
+    obsidian
 )
 
 # Update the system
@@ -180,6 +181,7 @@ scripts=(
     "rofi_theme.sh"
     "aliases.sh"
     "update_dns.sh"
+    "obsidian_setup.sh"
     # "laptop_setup.sh"
 )
 
