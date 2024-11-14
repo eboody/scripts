@@ -76,6 +76,7 @@ official_packages=(
     luarocks
     gvfs
     polkit-gnome
+    nushell
 )
 
 # List of AUR packages to be installed
@@ -129,6 +130,7 @@ aur_packages=(
     luajit-tiktoken-bin 
     btop
     obsidian
+    carapace-bin
 )
 
 # Update the system
