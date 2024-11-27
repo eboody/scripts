@@ -1,0 +1,28 @@
+{
+  "name": "Get First Page Image",
+  "pipeline": [
+    {
+      "operation": "/api/v1/general/remove-pages",
+      "parameters": {
+        "pageNumbers": "2-1000",
+        "fileInput": "automated"
+      }
+    },
+    {
+      "operation": "/api/v1/convert/pdf/img",
+      "parameters": {
+        "imageFormat": "jpeg",
+        "singleOrMultiple": "single",
+        "colorType": "color",
+        "dpi": "",
+        "fileInput": "automated"
+      }
+    }
+  ],
+  "_examples": {
+    "outputDir": "{outputFolder}/{folderName}",
+    "outputFileName": "{filename}-{pipelineName}-{date}-{time}"
+  },
+  "outputDir": "{outputFolder}",
+  "outputFileName": "{filename}"
+}
