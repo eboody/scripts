@@ -177,6 +177,7 @@ done
 
 # Run additional setup scripts
 scripts=(
+    "wireplumber-buzzing.sh"
     "docker_setup.sh"
     "pull_config.sh"
     "tmux_tpm.sh"
