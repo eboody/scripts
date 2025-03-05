@@ -77,7 +77,25 @@ official_packages=(
     gvfs
     polkit-gnome
     nushell
+    tumbler  
+    ffmpegthumbnailer
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
+    alsa-utils
+    base
+    base-devel
+    cuda
+    docker
+    firefox
+    linux
+    mesa-utils
+    networkmanager
+    pipewire
+    qt5-wayland
+    qt6-wayland
+    xorg-server
 )
+
 
 # List of AUR packages to be installed
 aur_packages=(
@@ -131,6 +149,54 @@ aur_packages=(
     btop
     obsidian
     carapace-bin
+    speedtest-cli
+    dolphin
+    dunst
+    gamescope
+    glmark2
+    hwinfo
+    hyprland
+    hyprland-qtutils
+    inxi
+    iwd
+    kvantum
+    lib32-nvidia-utils
+    lib32-systemd
+    linux-firmware
+    linux-headers
+    lutris
+    ly
+    man-db
+    ncspot
+    network-manager-applet
+    nvidia-dkms
+    nvidia-settings
+    nvme-cli
+    paru
+    pipewire-alsa
+    pipewire-jack
+    pipewire-pulse
+    polkit-kde-agent
+    qt5ct
+    rpi-imager
+    slack-desktop-wayland
+    smartmontools
+    steam
+    sysbench
+    thunar-volman
+    wine
+    wireless_tools
+    wireplumber
+    wl-clipboard
+    wlr-randr
+    wlroots
+    xdg-desktop-portal-wlr
+    xdg-utils
+    xml2
+    xorg-xinit
+    yay
+    yay-debug
+    yazi
 )
 
 # Update the system
@@ -203,17 +269,16 @@ grep -q 'export SSH_AUTH_SOCK=~/.1password/agent.sock' ~/.bashrc || echo 'export
 # Install Cargo packages
 cargo_packages=(
     "typeshare-cli"
-    "cargo-watch"
+    "bacon"
     "cargo-script"
     "cargo-run-script"
     "sccache"
-    "jinja-lsp"
 )
 
 for package in "${cargo_packages[@]}"; do
     if ! cargo install --list | grep -q "^$package v"; then
         log "Installing $package..."
-        cargo install "$package" || { log "Failed to install $package"; exit 1; }
+        cargo install --locked "$package" || { log "Failed to install $package"; exit 1; }
     else
         log "$package is already installed."
     fi
